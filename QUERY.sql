@@ -96,3 +96,18 @@ FROM
   bookings
 WHERE
   payment_status IS NULL;
+
+
+SELECT
+    b.booking_id,
+    u.full_name,
+    m.fixture,
+    b.total_cost
+FROM bookings as b
+JOIN users as u
+    ON b.user_id = u.user_id
+JOIN matches as m
+    ON b.match_id = m.match_id;
+
+
+    
